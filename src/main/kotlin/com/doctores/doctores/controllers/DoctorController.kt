@@ -8,7 +8,7 @@ import com.doctores.doctores.domains.request.CreateDoctorRequest
 import com.doctores.doctores.domains.responses.CreateDoctorResponse
 import com.doctores.doctores.services.DoctorService
 import org.springframework.beans.factory.annotation.Autowired
-import  org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.PathVariable
