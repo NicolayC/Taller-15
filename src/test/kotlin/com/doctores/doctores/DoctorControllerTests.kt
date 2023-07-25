@@ -48,8 +48,8 @@ public class DoctorControllerTest {
     public void testGetAllDoctors() {
         List<Doctor> doctors = new ArrayList<>();
         //Mock Process
-        doctors.add(new Doctor("John", "Doe", Especialidad.MEDICINA_GENERAL, "Consultorio A", "john.doe@example.com"));
-        doctors.add(new Doctor("Jane", "Smith", Especialidad.CARDIOLOGIA, "Consultorio B", "jane.smith@example.com"));
+        doctors.add(new Doctor("Dakota", "Neville", "Medicina General", "Consultorio A", "john.doe@example.com"));
+        doctors.add(new Doctor("Jim", "Hougan", "Ortopedia", "Consultorio B", "jim.hougan@x.com"));
 
         // Method execution
         when(doctorService.getAllDoctors()).thenReturn(doctors);
@@ -60,16 +60,16 @@ public class DoctorControllerTest {
         // Asserts
         assertNotNull(resultDoctors);
         assertEquals(2, resultDoctors.size());
-        assertEquals("John", resultDoctors.get(0).getNombre());
-        assertEquals("Doe", resultDoctors.get(0).getApellido());
+        assertEquals("Dakota", resultDoctors.get(0).getNombre());
+        assertEquals("Neville", resultDoctors.get(0).getApellido());
         assertEquals("Consultorio A", resultDoctors.get(0).getConsultorio());
-        assertEquals("jane.smith@example.com", resultDoctors.get(1).getCorreoContacto());
+        assertEquals("dakota.neville@x.com", resultDoctors.get(1).getCorreoContacto());
     }
 
     // Test GetDoctorById
     public void testGetDoctorById() {
         //Mock Process
-        Doctor doctor = new Doctor("John", "Doe", Especialidad.MEDICINA_GENERAL, "Consultorio A", "john.doe@example.com");
+        Doctor doctor = new Doctor("Dakota", "Neville", "Medicina General", "Consultorio A", "dakota.neville@x.com");
 
         // Method execution
         when(doctorService.getDoctorById(1L)).thenReturn(doctor);
@@ -79,9 +79,9 @@ public class DoctorControllerTest {
 
         // Asserts
         assertNotNull(resultDoctor);
-        assertEquals("John", resultDoctor.getNombre());
-        assertEquals("Doe", resultDoctor.getApellido());
-        assertEquals(Especialidad.MEDICINA_GENERAL, resultDoctor.getEspecialidad());
-        assertEquals("john.doe@example.com", resultDoctor.getCorreoContacto());
+        assertEquals("Dakota", resultDoctor.getNombre());
+        assertEquals("Neville", resultDoctor.getApellido());
+        assertEquals("Medicina General", resultDoctor.getEspecialidad());
+        assertEquals("dakota.neville@x.com", resultDoctor.getCorreoContacto());
     }
 }
